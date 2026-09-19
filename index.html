@@ -262,7 +262,7 @@ try{h=await rmAgenda({accion:"huecos_todos",casos:casos,cuantos:3});}catch(_){h=
 var ops=(h&&h.opciones)||[];
 if(!ops.length){out.innerHTML='<div style="'+RM_CAJA+'"><p style="'+RM_H+'">Listo, recibimos tus datos.</p><p style="'+RM_P+'">Desarrollo de negocio te contacta hoy mismo para agendar la reunión. Si prefieres, escríbenos directo:</p>'+rmContactos(res.contacto,"Programa in-company: "+rmPrograma())+'</div>';rmMostrar(out);return false;}
 RM_IC.caso=casoA;RM_IC.contacto=res.contacto;
-out.innerHTML='<div style="'+RM_CAJA+'"><p style="'+RM_H+'">Elige tu horario.</p><p style="'+RM_P+'">20 minutos por Google Meet con desarrollo de negocio (hora de la Ciudad de México). Te llega la invitación a <b>'+rmEsc(d.email)+'</b>.</p><div style="display:grid;gap:10px">'+
+out.innerHTML='<div style="'+RM_CAJA+'"><p style="'+RM_H+'">Elige tu horario.</p><p style="'+RM_P+'">20 minutos por Zoom con desarrollo de negocio (hora de la Ciudad de México). Te llega la invitación con la liga a <b>'+rmEsc(d.email)+'</b>.</p><div style="display:grid;gap:10px">'+
 ops.map(function(o){return '<button type="button" onclick="rmAgendar(\''+o.inicia+'\',\''+o.termina+'\',\''+(o.caso||casoA)+'\')" style="'+RM_BTN+'border:1.5px solid currentColor;background:transparent;color:inherit;width:100%">'+rmEsc(o.humano||o.inicia)+(o.persona?' · '+rmEsc(o.persona):'')+'</button>';}).join("")+
 '</div><p id="rm-ic-msg" style="font-size:12px;margin:12px 0 0;font-family:\'Lora\',Georgia,serif;min-height:16px"></p></div>';
 rmMostrar(out);return false;}
